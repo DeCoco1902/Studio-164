@@ -193,20 +193,19 @@
     }
 
     /* SCROLL ANIMATIONS */
-    .anim {
-      opacity: 0;
-      transform: translateY(30px);
+    .anim, .anim-left, .anim-right {
+      opacity: 1;
+      transform: none;
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .anim.in { opacity: 1; transform: translateY(0); }
+    .anim.ready { opacity: 0; transform: translateY(30px); }
+    .anim-left.ready { opacity: 0; transform: translateX(-30px); }
+    .anim-right.ready { opacity: 0; transform: translateX(30px); }
     .anim-d1 { transition-delay: 0.1s; }
     .anim-d2 { transition-delay: 0.2s; }
     .anim-d3 { transition-delay: 0.3s; }
     .anim-d4 { transition-delay: 0.4s; }
-    .anim-left { opacity: 0; transform: translateX(-30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .anim-left.in { opacity: 1; transform: translateX(0); }
-    .anim-right { opacity: 0; transform: translateX(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .anim-right.in { opacity: 1; transform: translateX(0); }
+    .anim.in, .anim-left.in, .anim-right.in { opacity: 1 !important; transform: none !important; }
   </style>
 </head>
 <body>
