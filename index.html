@@ -206,6 +206,99 @@
     .anim-d3 { transition-delay: 0.3s; }
     .anim-d4 { transition-delay: 0.4s; }
     .anim.in, .anim-left.in, .anim-right.in { opacity: 1 !important; transform: none !important; }
+  
+    /* ========== ANIMATIONS ========== */
+    /* Scroll reveal - start visible, hide below fold */
+    .anim, .anim-left, .anim-right {
+      opacity: 1; transform: none;
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .anim.ready        { opacity: 0; transform: translateY(36px); }
+    .anim-left.ready   { opacity: 0; transform: translateX(-36px); }
+    .anim-right.ready  { opacity: 0; transform: translateX(36px); }
+    .anim.in, .anim-left.in, .anim-right.in { opacity: 1 !important; transform: none !important; }
+    .anim-d1 { transition-delay: 0.1s; }
+    .anim-d2 { transition-delay: 0.2s; }
+    .anim-d3 { transition-delay: 0.3s; }
+    .anim-d4 { transition-delay: 0.4s; }
+
+    /* ========== HOVER EFFECTS ========== */
+    /* Stat items */
+    .stat-item { transition: background 0.3s; }
+    .stat-item:hover { background: rgba(201,165,90,0.06); }
+    .stat-num { transition: color 0.3s; }
+    .stat-item:hover .stat-num { color: var(--gold-light); }
+
+    /* Zasto cards */
+    .zasto-card { transition: border-color 0.35s, transform 0.35s, background 0.35s; }
+    .zasto-card:hover { border-color: var(--gold); transform: translateY(-6px); background: rgba(201,165,90,0.04); }
+    .zasto-icon { transition: transform 0.35s; }
+    .zasto-card:hover .zasto-icon { transform: scale(1.2); }
+
+    /* Put cards */
+    .put-card { transition: border-color 0.35s, transform 0.35s, background 0.35s; }
+    .put-card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(201,165,90,0.04); }
+    .put-num { transition: -webkit-text-stroke 0.35s; }
+    .put-card:hover .put-num { -webkit-text-stroke: 1px rgba(201,165,90,0.5); }
+
+    /* Iskustva cards */
+    .isk-card { transition: border-color 0.35s, transform 0.35s, background 0.35s; }
+    .isk-card:hover { border-color: rgba(201,165,90,0.4); transform: translateY(-5px); background: rgba(201,165,90,0.03); }
+
+    /* Trener cards */
+    .tre-card { transition: border-color 0.35s, transform 0.35s; }
+    .tre-card:hover { border-color: rgba(201,165,90,0.5); transform: translateY(-6px); }
+    .tre-img { transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .tre-card:hover .tre-img { transform: scale(1.04); }
+
+    /* Cjenik cards */
+    .cj-card { transition: border-color 0.35s, transform 0.35s, background 0.35s; }
+    .cj-card:hover { border-color: rgba(201,165,90,0.5); transform: translateY(-6px); background: rgba(201,165,90,0.03); }
+
+    /* Raspored rows */
+    .rasp-row { transition: background 0.25s; }
+    .rasp-row:hover { background: rgba(201,165,90,0.05); }
+    .rasp-time { transition: background 0.25s, color 0.25s; }
+    .rasp-row:hover .rasp-time { background: var(--gold); color: var(--black); border-color: var(--gold); }
+
+    /* Buttons */
+    .btn-gold { transition: background 0.3s, transform 0.2s, box-shadow 0.3s; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(201,165,90,0.3); }
+    .btn-out { transition: border-color 0.3s, color 0.3s, transform 0.2s; }
+    .btn-out:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+
+    /* Nav links underline effect */
+    .nav-links a { position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Footer links */
+    .ft-links a { position: relative; }
+    .ft-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+    .ft-links a:hover::after { width: 100%; }
+
+    /* WhatsApp float pulse */
+    .wa-float { animation: waPulse 2.5s infinite; }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.3); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.6); }
+    }
+
+    /* Gold link hover */
+    .ona-link { transition: gap 0.3s, color 0.3s; }
+    .ona-link:hover { color: var(--gold-light); }
+    .cj-link { transition: gap 0.3s, color 0.3s; }
+    .cj-link:hover { color: var(--gold-light); }
+
+    /* Form inputs */
+    .fg input, .fg select, .fg textarea {
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .fg input:hover, .fg select:hover, .fg textarea:hover {
+      background: rgba(237,228,216,0.05);
+    }
+    .btn-sub { transition: background 0.3s, transform 0.2s, box-shadow 0.3s; }
+    .btn-sub:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,165,90,0.25); }
   </style>
 </head>
 <body>
@@ -262,8 +355,8 @@
 </section>
 
 <section id="zasto">
-  <div class="sec-tag sec-tag-c">Zašto Studio 164</div>
-  <h2 class="sec-title" style="text-align:center">Premium iskustvo.<br><span class="gold">Pravi rezultati.</span></h2>
+  <div class="sec-tag sec-tag-c anim">Zašto Studio 164</div>
+  <h2 class="sec-title anim anim-d1" style="text-align:center">Premium iskustvo.<br><span class="gold">Pravi rezultati.</span></h2>
   <div class="zasto-grid">
     <div class="zasto-card anim"><div class="zasto-icon">👥</div><h3>Male grupe</h3><p>Maksimalno 8 članova po treningu. Osjećaj personalnog pristupa uz snagu grupe.</p></div>
     <div class="zasto-card anim anim-d1"><div class="zasto-icon">⚡</div><h3>2 trenera stalno</h3><p>Dominik i Sara prisutni cijelo vrijeme. Svaki pokret vođen, svaka tehnika ispravljena.</p></div>
@@ -272,7 +365,7 @@
 </section>
 
 <section id="put">
-  <div class="put-hdr">
+  <div class="put-hdr anim">
     <div class="sec-tag sec-tag-c">Kako izgleda trening</div>
     <h2 class="sec-title">Tvoj put do rezultata</h2>
   </div>
@@ -328,14 +421,14 @@
 </section>
 
 <section id="cjenik">
-  <div class="cj-hdr">
+  <div class="cj-hdr anim">
     <div class="sec-tag sec-tag-c">Cjenik</div>
     <h2 class="sec-title">Investicija u sebe</h2>
   </div>
   <p class="cj-sub">Sve cijene su po mjesecu · Ograničen broj mjesta</p>
   <div class="cj-grid">
-    <div class="cj-card anim">
-      <div class="cj-card-hdr anim anim-d1"><div class="cj-name">Grupni treninzi</div><div class="cj-desc">Mjesečna članarina (2x i 3x tjedno)</div></div>
+    <div class="cj-card anim anim">
+      <div class="cj-card-hdr anim anim-d1 anim anim-d1"><div class="cj-name">Grupni treninzi</div><div class="cj-desc">Mjesečna članarina (2x i 3x tjedno)</div></div>
       <div class="cj-items">
         <div class="cj-row"><span class="cj-lbl">Godišnji ugovor (12 mj.)</span><span class="cj-price">60€</span></div>
         <div class="cj-row"><span class="cj-lbl">Polugodišnji ugovor (6 mj.)</span><span class="cj-price">70€</span></div>
@@ -350,8 +443,8 @@
         <div class="cj-row"><span class="cj-lbl">Poluindividualni (2 osobe)</span><span class="cj-price">60€</span></div>
       </div>
     </div>
-    <div class="cj-card anim anim-d2">
-      <div class="cj-card-hdr anim"><div class="cj-name">Limfna drenaža</div><div class="cj-desc">30 min tretman · Oporavak i regeneracija</div></div>
+    <div class="cj-card anim anim-d2 anim anim-d2">
+      <div class="cj-card-hdr anim anim anim-d2"><div class="cj-name">Limfna drenaža</div><div class="cj-desc">30 min tretman · Oporavak i regeneracija</div></div>
       <div class="cj-items">
         <div class="cj-row"><span class="cj-lbl">1 tretman</span><span class="cj-price">25€</span></div>
         <div class="cj-row"><span class="cj-lbl">5 tretmana</span><span class="cj-price">100€</span></div>
@@ -367,7 +460,7 @@
       <div class="pog-item"><div class="pog-icon">🚗</div><div class="pog-txt">Osiguran parking</div></div>
     </div>
   </div>
-  <div class="cj-cta"><a href="https://wa.me/385977307699" target="_blank" class="cj-link">Pitaj nas za detalje na WhatsApp →</a></div>
+  <div class="cj-cta anim"><a href="https://wa.me/385977307699" target="_blank" class="cj-link">Pitaj nas za detalje na WhatsApp →</a></div>
 </section>
 
 <section id="treninzi">
@@ -387,8 +480,8 @@
   <div class="cta-ban-cnt">
     <div class="cta-ban-tag anim">— Samo 8 mjesta po terminu —</div>
     <h2 class="anim anim-d1">Spreman za ozbiljan napredak?</h2>
-    <p>Rezerviraj mjesto — ili nam piši direktno na WhatsApp za besplatni savjet i termin.</p>
-    <div class="cta-btns">
+    <p class="anim anim-d2">Rezerviraj mjesto — ili nam piši direktno na WhatsApp za besplatni savjet i termin.</p>
+    <div class="cta-btns anim anim-d3">
       <a href="https://wa.me/385977307699" target="_blank" class="btn-gold">💬 WhatsApp rezervacija →</a>
       <a href="tel:+385977307699" class="btn-out">📞 Nazovi nas</a>
     </div>
@@ -454,6 +547,31 @@
     });
   }
 
-  // Run on every possible event to ensure nothing stays hidden
+  // Scroll animations - start visible, hide below-fold, animate in on scroll
+  function initAnims() {
+    var els = document.querySelectorAll('.anim, .anim-left, .anim-right');
+    var vh = window.innerHeight;
+    els.forEach(function(el) {
+      if (el.getBoundingClientRect().top > vh) {
+        el.classList.add('ready');
+      }
+    });
+  }
+
+  function animate() {
+    var els = document.querySelectorAll('.anim.ready, .anim-left.ready, .anim-right.ready');
+    var vh = window.innerHeight;
+    els.forEach(function(el) {
+      if (el.getBoundingClientRect().top < vh - 40) {
+        el.classList.remove('ready');
+        el.classList.add('in');
+      }
+    });
+  }
+
   window.addEventListener('scroll', animate, { passive: true });
-  document.addEventListener('DOMConte
+  window.addEventListener('load', function() { initAnims(); animate(); });
+  setTimeout(function() { initAnims(); animate(); }, 300);
+</script>
+</body>
+</html>
