@@ -300,8 +300,14 @@
     .btn-sub { transition: background 0.3s, transform 0.2s, box-shadow 0.3s; }
     .btn-sub:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,165,90,0.25); }
   </style>
-  <script defer src="https://cdn.vercel-insights.com/v1/speed-insights/script.js"></script>
-  <script defer src="https://cdn.vercel-insights.com/v1/analytics/script.js"></script>
+  <script>
+    window.va = window.va || function() { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    window.si = window.si || function() { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 <nav id="nav">
